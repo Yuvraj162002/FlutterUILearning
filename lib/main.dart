@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_ui_learning/ui_helper/util.dart';
+import 'package:flutter_ui_learning/widgets/RoundedButton.dart';
 
 void main() {
   runApp(const MyApp());
@@ -428,63 +429,82 @@ class _MyHomePageState extends State<MyHomePage> {
           width: 300, child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          TextField(
-            controller: emailText,
-              decoration: InputDecoration(
-                  hintText: "Enter your email",
-                  focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(11),
-                      borderSide: BorderSide(
-                        color: Colors.blue,
-                        width: 2,
-                      )
-                  ),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(11),
-                      borderSide: BorderSide(
-                        color: Colors.black,
-                        width: 2,
-                      )
-                  ),
-                  prefixIcon: Icon(Icons.email, color: Colors.black,)
 
-
-              )
-          ),
+          MyEmailTextField(controller: emailText), // This is the custom widget for email text field
           Container(height: 11,),
-          TextField(
-            keyboardType: TextInputType.phone,
-            controller: passwordText,
-            obscureText: true,
-            obscuringCharacter: '*',
-            decoration: InputDecoration(
-                hintText: "Enter your password",
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(11),
-                    borderSide: BorderSide(
-                      color: Colors.black,
-                      width: 2,
-                    )
-                ),
-                prefixIcon: Icon(Icons.lock, color: Colors.black,),
-                suffixIcon: Icon(Icons.remove_red_eye, color: Colors.blue)
-            ),
-          ),
+          MyPasswordTextField(controller: passwordText), // This is the custom widget for password text field
           Container(height: 11,),
-
-          ElevatedButton(onPressed: (){
-             String uEmail = emailText.text.toString();
-             String uPassword = passwordText.text.toString();
-             
-             print("Email is ${uEmail} and pass is ${uPassword}");
-          },
-            style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-            child: Text('Login', style: TextStyle(color: Colors.white, fontSize: 21),),
-          )
+          RoundedButton(text: 'Login',emailText: emailText, passwordText: passwordText), // This is the custom widget for button
+          RoundedButton(text: 'Register',emailText: emailText, passwordText: passwordText), // This is the custom widget for button
         ],
 
       )
       )
+      ),
+    );
+  }
+}
+
+class MyEmailTextField extends StatelessWidget {
+
+  final TextEditingController controller;
+
+
+  const MyEmailTextField({super.key, required this.controller});
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return  TextField(
+        controller: controller,
+        decoration: InputDecoration(
+            hintText: "Enter your email",
+            focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(11),
+                borderSide: BorderSide(
+                  color: Colors.blue,
+                  width: 2,
+                )
+            ),
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(11),
+                borderSide: BorderSide(
+                  color: Colors.black,
+                  width: 2,
+                )
+            ),
+            prefixIcon: Icon(Icons.email, color: Colors.black,)
+
+
+        )
+    );
+  }
+}
+
+class MyPasswordTextField extends StatelessWidget {
+
+  final TextEditingController controller;
+
+  const MyPasswordTextField({super.key, required this.controller});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      keyboardType: TextInputType.phone,
+      controller: controller,
+      obscureText: true,
+      obscuringCharacter: '*',
+      decoration: InputDecoration(
+          hintText: "Enter your password",
+          border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(11),
+              borderSide: BorderSide(
+                color: Colors.black,
+                width: 2,
+              )
+          ),
+          prefixIcon: Icon(Icons.lock, color: Colors.black,),
+          suffixIcon: Icon(Icons.remove_red_eye, color: Colors.blue)
       ),
     );
   }
