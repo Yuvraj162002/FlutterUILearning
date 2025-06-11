@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_ui_learning/ui_helper/util.dart';
 
 void main() {
   runApp(const MyApp());
@@ -55,6 +57,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  var emailText = TextEditingController();
+  var passwordText = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -327,8 +332,7 @@ class _MyHomePageState extends State<MyHomePage> {
       //       height: 200,
       //       decoration: BoxDecoration(
       //         color: Colors.red,
-      //         borderRadius: BorderRadius.circular(10),
-      //         // Give half the width and height to make it circular.
+      //         borderRadius: BorderRadius.circular(10), // Give half the width and height to make it circular.
       //         border: Border.all(color: Colors.black, width: 2),
       //         boxShadow: [
       //           BoxShadow(
@@ -382,17 +386,105 @@ class _MyHomePageState extends State<MyHomePage> {
 
       /** Learning 10 ------------> Concept of using the ListTile widget...*/
 
-      body: ListView.separated(itemBuilder: (context, index){
-        return ListTile(
-          leading: Text('${index}'),
-          title: Text(names[index]),
-          trailing: Icon(Icons.add),
-        );
-      },
-      itemCount: names.length, // This is the length of the list
-      separatorBuilder: (context, index) {
-        return Divider(height: 4, thickness: 4, color: Colors.amber,);
-      }
+      // body: ListView.separated(itemBuilder: (context, index){
+      //   return ListTile(
+      //     leading: Text('${index}'),
+      //     title: Text(names[index]),
+      //     trailing: Icon(Icons.add),
+      //   );
+      // },
+      // itemCount: names.length, // This is the length of the list
+      // separatorBuilder: (context, index) {
+      //   return Divider(height: 4, thickness: 4, color: Colors.amber,);
+      // }
+      // ),
+
+      /** Learning 11 ------------> Concept of using the Circle Avatar widget...*/
+      
+      // body: Center(
+      //   child: CircleAvatar(
+      //     backgroundColor: Colors.green,
+      //     radius: 120,
+      //     child: Column(
+      //       children: [
+      //         Container(
+      //             child:Image.asset('assets/images/flutter_normal_logo.png', width: 100, height: 100,)),
+      //             Text('This is new', style: TextStyle(color: Colors.black, fontSize:30.0),)
+      //       ],
+      //     ),
+      //   ),
+      // ),
+      
+      /** Learning 12 ------------> Concept of using the Flutter Style and theme...*/
+      // body: Column(
+      //   children: [
+      //     Text('Text 1', style: Theme.of(context).textTheme.headlineLarge?.copyWith(color: Colors.green)),
+      //     Text('Text 2', style: mTextStyle1() )
+      //   ],
+      // ),
+
+      /** Learning 13 ------------> Concept of using the Get User Input widget...*/
+      body: Center(child: Container(
+          width: 300, child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          TextField(
+            controller: emailText,
+              decoration: InputDecoration(
+                  hintText: "Enter your email",
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(11),
+                      borderSide: BorderSide(
+                        color: Colors.blue,
+                        width: 2,
+                      )
+                  ),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(11),
+                      borderSide: BorderSide(
+                        color: Colors.black,
+                        width: 2,
+                      )
+                  ),
+                  prefixIcon: Icon(Icons.email, color: Colors.black,)
+
+
+              )
+          ),
+          Container(height: 11,),
+          TextField(
+            keyboardType: TextInputType.phone,
+            controller: passwordText,
+            obscureText: true,
+            obscuringCharacter: '*',
+            decoration: InputDecoration(
+                hintText: "Enter your password",
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(11),
+                    borderSide: BorderSide(
+                      color: Colors.black,
+                      width: 2,
+                    )
+                ),
+                prefixIcon: Icon(Icons.lock, color: Colors.black,),
+                suffixIcon: Icon(Icons.remove_red_eye, color: Colors.blue)
+            ),
+          ),
+          Container(height: 11,),
+
+          ElevatedButton(onPressed: (){
+             String uEmail = emailText.text.toString();
+             String uPassword = passwordText.text.toString();
+             
+             print("Email is ${uEmail} and pass is ${uPassword}");
+          },
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+            child: Text('Login', style: TextStyle(color: Colors.white, fontSize: 21),),
+          )
+        ],
+
+      )
+      )
       ),
     );
   }
