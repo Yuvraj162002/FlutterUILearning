@@ -425,21 +425,75 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
       /** Learning 13 ------------> Concept of using the Get User Input widget...*/
-      body: Center(child: Container(
-          width: 300, child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
+      // body: Center(child: Container(
+      //     width: 300, child: Column(
+      //   mainAxisAlignment: MainAxisAlignment.center,
+      //   children: [
+      //
+      //     MyEmailTextField(controller: emailText), // This is the custom widget for email text field
+      //     Container(height: 11,),
+      //     MyPasswordTextField(controller: passwordText), // This is the custom widget for password text field
+      //     Container(height: 11,),
+      //     RoundedButton(text: 'Login',emailText: emailText, passwordText: passwordText), // This is the custom widget for button
+      //     RoundedButton(text: 'Register',emailText: emailText, passwordText: passwordText), // This is the custom widget for button
+      //   ],
+      //
+      // )
+      // )
+      // ),
 
-          MyEmailTextField(controller: emailText), // This is the custom widget for email text field
-          Container(height: 11,),
-          MyPasswordTextField(controller: passwordText), // This is the custom widget for password text field
-          Container(height: 11,),
-          RoundedButton(text: 'Login',emailText: emailText, passwordText: passwordText), // This is the custom widget for button
-          RoundedButton(text: 'Register',emailText: emailText, passwordText: passwordText), // This is the custom widget for button
-        ],
+      /** Learning 14 ------------> Concept of using the Wrap widget...*/
 
-      )
-      )
+      body: Container(
+        width: double.infinity,
+        child: Wrap(
+          spacing: 11, // This is the space between the widgets in the wrap
+          runSpacing: 11, // This is the space between the rows in the wrap
+          direction: Axis.horizontal,
+          alignment: WrapAlignment.spaceEvenly,
+          children: [
+            Container(
+              width: 200,
+              height: 100,
+              color: Colors.blue,
+            )
+            , Container(
+              width: 100,
+              height: 100,
+              color: Colors.green,
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.red,
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.black,
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.green,
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.indigo,
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.lime,
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.amberAccent,
+            )
+          ],
+        ),
       ),
     );
   }
