@@ -4,6 +4,9 @@ import 'package:flutter_ui_learning/ui_helper/util.dart';
 import 'package:flutter_ui_learning/widgets/RoundedButton.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_ui_learning/stateful_widgets_custom/StateFulWidgets.dart';
+import 'package:flutter_ui_learning/demo_project/CalculationApp.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -36,7 +39,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const CalculationApp(),
     );
   }
 }
@@ -568,34 +571,36 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
       /** Learning 18 ------------> Concept of using the Positioned widget...*/
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.red,
-        child: Stack(
-            children: [
-              Positioned(
-                bottom: 100,
-                right: 100,
-                child: Container(
-                    width: 100,
-                    height: 100,
-                    color: Colors.white
-                ),
-              ),
+      // body: Container(
+      //   width: double.infinity,
+      //   height: double.infinity,
+      //   color: Colors.red,
+      //   child: Stack(
+      //       children: [
+      //         Positioned(
+      //           bottom: 100,
+      //           right: 100,
+      //           child: Container(
+      //               width: 100,
+      //               height: 100,
+      //               color: Colors.white
+      //           ),
+      //         ),
+      //
+      //         Positioned(
+      //           bottom: 108,
+      //           right: 108,
+      //           child: Container(
+      //               width: 100,
+      //               height: 100,
+      //               color: Colors.blue
+      //           ),
+      //         ),
+      //       ]
+      //   ),
+      // ),
 
-              Positioned(
-                bottom: 108,
-                right: 108,
-                child: Container(
-                    width: 100,
-                    height: 100,
-                    color: Colors.blue
-                ),
-              ),
-            ]
-        ),
-      ),
+      /** Learning 19 ------------> Concept of using the StateLess widget...*/
     );
   }
 }
