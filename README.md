@@ -60,6 +60,14 @@ This section documents the progress and learning resources for building user int
 
 19. **Positioned Widget**
     - Precisely positioning child widgets within a Stack for flexible layouts.
+      
+20. **Stateful and Stateless Widgets**
+    - Understanding the differences between StatefulWidget and StatelessWidget and when to use each.
+
+21. **Simple Calculation Demo App**
+    - Creating a basic calculator app to demonstrate the practical usage of stateful and stateless widgets.
+
+
 ---
 
 Feel free to explore each topic’s respective code samples and explanations in this repository. More UI components and advanced topics will be added as learning progresses!
