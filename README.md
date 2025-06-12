@@ -68,6 +68,7 @@ This section documents the progress and learning resources for building user int
     - Creating a basic calculator app to demonstrate the practical usage of stateful and stateless widgets.
 
 
----
+<img src="https://github.com/user-attachments/assets/1b14043b-0e80-4876-aa5f-2d6beedeccdf" height="550">
+
 
 Feel free to explore each topic’s respective code samples and explanations in this repository. More UI components and advanced topics will be added as learning progresses!
