@@ -444,57 +444,118 @@ class _MyHomePageState extends State<MyHomePage> {
 
       /** Learning 14 ------------> Concept of using the Wrap widget...*/
 
-      body: Container(
-        width: double.infinity,
-        child: Wrap(
-          spacing: 11, // This is the space between the widgets in the wrap
-          runSpacing: 11, // This is the space between the rows in the wrap
-          direction: Axis.horizontal,
-          alignment: WrapAlignment.spaceEvenly,
-          children: [
-            Container(
-              width: 200,
-              height: 100,
-              color: Colors.blue,
-            )
-            , Container(
-              width: 100,
-              height: 100,
-              color: Colors.green,
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.red,
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.black,
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.green,
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.indigo,
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.lime,
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.amberAccent,
-            )
-          ],
-        ),
-      ),
+      // body: Container(
+      //   width: double.infinity,
+      //   child: Wrap(
+      //     spacing: 11, // This is the space between the widgets in the wrap
+      //     runSpacing: 11, // This is the space between the rows in the wrap
+      //     direction: Axis.horizontal,
+      //     alignment: WrapAlignment.spaceEvenly,
+      //     children: [
+      //       Container(
+      //         width: 200,
+      //         height: 100,
+      //         color: Colors.blue,
+      //       )
+      //       , Container(
+      //         width: 100,
+      //         height: 100,
+      //         color: Colors.green,
+      //       ),
+      //       Container(
+      //         width: 100,
+      //         height: 100,
+      //         color: Colors.red,
+      //       ),
+      //       Container(
+      //         width: 100,
+      //         height: 100,
+      //         color: Colors.black,
+      //       ),
+      //       Container(
+      //         width: 100,
+      //         height: 100,
+      //         color: Colors.green,
+      //       ),
+      //       Container(
+      //         width: 100,
+      //         height: 100,
+      //         color: Colors.indigo,
+      //       ),
+      //       Container(
+      //         width: 100,
+      //         height: 100,
+      //         color: Colors.lime,
+      //       ),
+      //       Container(
+      //         width: 100,
+      //         height: 100,
+      //         color: Colors.amberAccent,
+      //       )
+      //     ],
+      //   ),
+      // ),
+
+      /** Learning 15 ------------> Concept of using the RichText widget...*/
+
+      // body: Center(
+      //   child: RichText(
+      //     text: TextSpan(
+      //       style: TextStyle(
+      //         fontSize: 20,
+      //         color: Colors.black,
+      //         fontWeight: FontWeight.bold,
+      //       ),
+      //         children: <TextSpan>[
+      //           TextSpan(
+      //             text: 'We',
+      //             style: TextStyle(
+      //                 fontSize: 30,
+      //                 color: Colors.amberAccent,
+      //             ),
+      //           ),
+      //           TextSpan(
+      //               text: 'Are',
+      //               style: TextStyle(
+      //                   fontSize: 30,
+      //                   color: Colors.blue,
+      //               )
+      //           ),
+      //           TextSpan(
+      //               text: 'Learning',
+      //           ),
+      //           TextSpan(
+      //               text: 'Flutter',
+      //               style: TextStyle(
+      //                   fontSize: 20,
+      //                   color: Colors.red,
+      //                   fontWeight: FontWeight.normal
+      //               )
+      //           ),
+      //           TextSpan(
+      //               text: 'Language',
+      //               style: TextStyle(
+      //                   fontSize: 20,
+      //                   color: Colors.lime,
+      //                   fontWeight: FontWeight.bold
+      //               )
+      //           ),
+      //         ]
+      //     ),
+      //   ),
+      // ),
+
+      /** Learning 16 ------------> Concept of using the Icon widget...*/
+      // body: Center(
+      //   child: Icon(
+      //     Icons.play_arrow,
+      //     size: 50,
+      //     color: Colors.purple,
+      //   ),
+      // ),
+
+
+
     );
   }
 }
