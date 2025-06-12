@@ -40,6 +40,18 @@ This section documents the progress and learning resources for building user int
 12. **ListTile Widget**
     - Displaying structured list items with leading/trailing icons, titles, and subtitles.
 
+13. **CircleAvatar Widget**
+    - Displaying circular images or icons, commonly used for profile pictures.
+
+14. **Flutter Style and Theme**
+    - Customizing the overall look and feel of the app using ThemeData, colors, and typography.
+
+15. **User Input (TextField Widget)**
+    - Capturing user input with text fields and managing input decoration, validation, and controllers.
+
+16. **Wrap Widget**
+    - Laying out widgets in horizontal and vertical flows, automatically wrapping to the next line as needed.
+
 ---
 
 Feel free to explore each topic’s respective code samples and explanations in this repository. More UI components and advanced topics will be added as learning progresses!
