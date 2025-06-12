@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_ui_learning/ui_helper/util.dart';
 import 'package:flutter_ui_learning/widgets/RoundedButton.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -554,8 +556,46 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
 
+      /** Learning 17 ------------> Concept of using the Font Awesome icons widget...*/
+      // body: Center(
+      //   child: Row(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       Icon(Icons.play_arrow, size: 50, color: Colors.purple),
+      //       FaIcon(FontAwesomeIcons.amazonPay, color: Colors.blue, size: 50),
+      //     ],
+      //   ),
+      // ),
 
+      /** Learning 18 ------------> Concept of using the Positioned widget...*/
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        color: Colors.red,
+        child: Stack(
+            children: [
+              Positioned(
+                bottom: 100,
+                right: 100,
+                child: Container(
+                    width: 100,
+                    height: 100,
+                    color: Colors.white
+                ),
+              ),
 
+              Positioned(
+                bottom: 108,
+                right: 108,
+                child: Container(
+                    width: 100,
+                    height: 100,
+                    color: Colors.blue
+                ),
+              ),
+            ]
+        ),
+      ),
     );
   }
 }
