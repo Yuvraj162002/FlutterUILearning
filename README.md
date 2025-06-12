@@ -52,6 +52,14 @@ This section documents the progress and learning resources for building user int
 16. **Wrap Widget**
     - Laying out widgets in horizontal and vertical flows, automatically wrapping to the next line as needed.
 
+17. **Icon Widgets**
+    - Using built-in icons with the Icon widget and customizing their size, color, and appearance.
+
+18. **Font Awesome Icon Widget**
+    - Integrating and displaying Font Awesome icons for richer UI options by adding third party library.
+
+19. **Positioned Widget**
+    - Precisely positioning child widgets within a Stack for flexible layouts.
 ---
 
 Feel free to explore each topic’s respective code samples and explanations in this repository. More UI components and advanced topics will be added as learning progresses!
