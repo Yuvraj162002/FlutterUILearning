@@ -30,7 +30,7 @@ class RoundedButton extends StatelessWidget {
         String uEmail = emailText.text.toString();
         String uPassword = passwordText.text.toString();
 
-        print("Email is ${uEmail} and pass is ${uPassword}");
+        print("Email is $uEmail and pass is $uPassword");
       },
       style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
       child: Text(text, style: TextStyle(color: Colors.white, fontSize: 21)),

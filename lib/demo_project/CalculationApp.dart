@@ -13,11 +13,47 @@ class _CalculationAppState extends State<CalculationApp> {
   var secondNumberController = TextEditingController();
   var result = " ";
 
+  void addNumbers() {
+    setState(() {
+      var numberFirst = int.parse(firstNumberController.text.toString());
+      var numberSecond = int.parse(secondNumberController.text.toString());
+      var sum = numberFirst + numberSecond;
+      result = "sum of $numberFirst and $numberSecond is $sum";
+    });
+  }
+
+  void subtractNumbers() {
+    setState(() {
+      var numberFirst = int.parse(firstNumberController.text.toString());
+      var numberSecond = int.parse(secondNumberController.text.toString());
+      var subtract = numberFirst - numberSecond;
+      result = "subtract of $numberFirst and $numberSecond is $subtract";
+    });
+  }
+
+  void multiplyNumbers() {
+    setState(() {
+      var numberFirst = int.parse(firstNumberController.text.toString());
+      var numberSecond = int.parse(secondNumberController.text.toString());
+      var multiply = numberFirst * numberSecond;
+      result = "multiply of $numberFirst and $numberSecond is $multiply";
+    });
+  }
+
+  void divideNumbers() {
+    setState(() {
+      var numberFirst = int.parse(firstNumberController.text.toString());
+      var numberSecond = int.parse(secondNumberController.text.toString());
+      var divide = numberFirst ~/ numberSecond;
+      result = "divide of $numberFirst and $numberSecond is $divide";
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Calculation App'),
+        title: Text('Calculations App'),
         backgroundColor: Colors.blue,
       ),
       body: Container(
@@ -28,28 +64,14 @@ class _CalculationAppState extends State<CalculationApp> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TextField(
+                NumberTextField(
+                  hintText: 'Enter First number',
                   controller: firstNumberController,
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    hint: Text('Enter first number'),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(11),
-                    ),
-                  ),
                 ),
-
                 Container(height: 10),
-
-                TextField(
+                NumberTextField(
+                  hintText: 'Enter Second number',
                   controller: secondNumberController,
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    hint: Text('Enter Second number'),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(11),
-                    ),
-                  ),
                 ),
 
                 Padding(
@@ -57,76 +79,32 @@ class _CalculationAppState extends State<CalculationApp> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      OutlinedButton(
-                        onPressed: () {
-                          // Add the addition logic here
-                          var numberFirst = int.parse(
-                            firstNumberController.text.toString(),
-                          );
-                          var numberSecond = int.parse(
-                            secondNumberController.text.toString(),
-                          );
-                          var sum = numberFirst + numberSecond;
-                          result =
-                              "sum of $numberFirst and $numberSecond is $sum";
-
-                          setState(() {});
-                        },
-                        child: Text('Add'),
+                      CustomOutlinedButton(
+                        text: 'Add',
+                        onPressed: addNumbers,
+                        firstNumberController: firstNumberController,
+                        secondNumberController: secondNumberController,
                       ),
 
-                      OutlinedButton(
-                        onPressed: () {
-                          // Add the subtract logic here
-                          setState(() {
-                            var numberFirst = int.parse(
-                              firstNumberController.text.toString(),
-                            );
-                            var numberSecond = int.parse(
-                              secondNumberController.text.toString(),
-                            );
-                            var subtract = numberFirst - numberSecond;
-                            result =
-                                "subtract of $numberFirst and $numberSecond is $subtract";
-                          });
-                        },
-                        child: Text('Sub'),
+                      CustomOutlinedButton(
+                        text: 'Sub',
+                        onPressed: subtractNumbers,
+                        firstNumberController: firstNumberController,
+                        secondNumberController: secondNumberController,
                       ),
 
-                      OutlinedButton(
-                        onPressed: () {
-                          // Add the multiply logic here
-                          setState(() {
-                            var numberFirst = int.parse(
-                              firstNumberController.text.toString(),
-                            );
-                            var numberSecond = int.parse(
-                              secondNumberController.text.toString(),
-                            );
-                            var multiply = numberFirst * numberSecond;
-                            result =
-                                "multiply of $numberFirst and $numberSecond is $multiply";
-                          });
-                        },
-                        child: Text('Mult'),
+                      CustomOutlinedButton(
+                        text: 'Mul',
+                        onPressed: multiplyNumbers,
+                        firstNumberController: firstNumberController,
+                        secondNumberController: secondNumberController,
                       ),
 
-                      OutlinedButton(
-                        onPressed: () {
-                          // Add the divide logic here
-                          setState(() {
-                            var numberFirst = int.parse(
-                              firstNumberController.text.toString(),
-                            );
-                            var numberSecond = int.parse(
-                              secondNumberController.text.toString(),
-                            );
-                            var divide = numberFirst ~/ numberSecond;
-                            result =
-                                "divide of $numberFirst and $numberSecond is $divide";
-                          });
-                        },
-                        child: Text('Div'),
+                      CustomOutlinedButton(
+                        text: 'Div',
+                        onPressed: divideNumbers,
+                        firstNumberController: firstNumberController,
+                        secondNumberController: secondNumberController,
                       ),
                     ],
                   ),
@@ -144,6 +122,59 @@ class _CalculationAppState extends State<CalculationApp> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class NumberTextField extends StatelessWidget {
+  final TextEditingController controller;
+  final String hintText;
+
+  const NumberTextField({
+    super.key,
+    required this.hintText,
+    required this.controller,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      controller: controller,
+      keyboardType: TextInputType.number,
+      decoration: InputDecoration(
+        hint: Text(hintText),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(11)),
+      ),
+    );
+  }
+}
+
+class CustomOutlinedButton extends StatefulWidget {
+  final String text;
+  final VoidCallback onPressed;
+  final TextEditingController firstNumberController;
+  final TextEditingController secondNumberController;
+
+  const CustomOutlinedButton({
+    super.key,
+    required this.text,
+    required this.onPressed,
+    required this.firstNumberController,
+    required this.secondNumberController,
+  });
+
+  @override
+  State<CustomOutlinedButton> createState() => _CustomOutlinedButtonState();
+}
+
+class _CustomOutlinedButtonState extends State<CustomOutlinedButton> {
+  @override
+  Widget build(BuildContext context) {
+    return OutlinedButton(
+      onPressed: () {
+        widget.onPressed();
+      },
+      child: Text(widget.text),
     );
   }
 }
