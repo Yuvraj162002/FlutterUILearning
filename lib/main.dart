@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_ui_learning/intro_screen/IntroScreen.dart' show IntroScreen;
+import 'package:flutter_ui_learning/splash_screen/SplashScreen.dart' show SplashScreen;
 import 'package:flutter_ui_learning/ui_helper/util.dart';
 import 'package:flutter_ui_learning/widgets/RoundedButton.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -39,7 +41,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const CalculationApp(),
+      home: const SplashScreen(),
     );
   }
 }
