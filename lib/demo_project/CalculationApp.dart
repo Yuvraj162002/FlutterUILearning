@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CalculationApp extends StatefulWidget {
-  const CalculationApp({super.key});
+  final yourname;
+
+  const CalculationApp({super.key, required this.yourname});
 
   @override
   State<StatefulWidget> createState() => _CalculationAppState();
@@ -64,6 +66,15 @@ class _CalculationAppState extends State<CalculationApp> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Text(
+                  'Welcome ${widget.yourname} to the Calculation App',
+                  style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Container(height: 20),
                 NumberTextField(
                   hintText: 'Enter First number',
                   controller: firstNumberController,

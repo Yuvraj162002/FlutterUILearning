@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_learning/demo_project/CalculationApp.dart';
@@ -9,17 +8,39 @@ class IntroScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var controller = TextEditingController();
+
     // TODO: implement build
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Intro Screen'),
-        backgroundColor: Colors.lime,
-      ),
+      appBar: AppBar(title: Text('Intro Screen'), backgroundColor: Colors.lime),
       body: Center(
-        child: OutlinedButton(onPressed: () {
-          Navigator.push(context,
-            MaterialPageRoute(builder: (context) => CalculationApp()));
-            }, child: Text('Next')),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                controller: controller,
+                decoration: InputDecoration(
+                  labelText: 'Enter your name',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+            ),
+            OutlinedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        CalculationApp(yourname: controller.text.toString()),
+                  ),
+                );
+              },
+              child: Text('Next'),
+            ),
+          ],
+        ),
       ),
     );
   }
