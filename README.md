@@ -75,5 +75,13 @@ This section documents the progress and learning resources for building user int
 23. **Splash Screen Implementation**
     - Creating and displaying a splash screen on app startup for improved user experience.
 
+24. **Sharing Data Between Screens**
+    - Techniques for passing and sharing data from one screen to another during navigation.
+   
+Here is the video for the reference to show how the splash screen, navigation and data pass works
+
+https://github.com/user-attachments/assets/3fe9ad9f-f2d6-4d18-9199-1ae81fa68f6a
+
+    
 
 Feel free to explore each topic’s respective code samples and explanations in this repository. More UI components and advanced topics will be added as learning progresses!
